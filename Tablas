@@ -1,1 +1,78 @@
+USE master
+GO
+DROP DATABASE IF EXISTS Primeros_Auxilios ; 
+GO
+CREATE DATABASE Primeros_Auxilios;
+GO
+USE Primeros_Auxilios;
+GO
+
+CREATE TABLE Problemas (
+	Problema_id 	int identity(1,1),
+	Nombre 		varchar(200) not null,
+	Descripcion	varchar(200) not null,
+	consciencia     bit,
+	respiracio      bit,
+	hemorragia      bit,
+	gravedad	int
+	
+);
+
+CREATE TABLE Sintomas(
+	Sintoma_id		integer not null,
+	Nombre			varchar(200)
+
+);
+
+CREATE TABLE Problemas_Sintomas (
+	Problema_id		int  NOT NULL,
+	Sintoma_id		int  NOT NULL
+	
+
+);
+
+CREATE TABLE Protocolos (
+	Protocolo_id 	int identity(1,1),
+	Problema_id     int,
+	edad		varchar(200)
+);
+CREATE TABLE Pasos (
+	Paso_id		int identity(1,1),
+	protocolo_id    int,
+	num_paso 	int,
+	Descripcion     varchar(200),
+	nombre_paso     varchar(200)
+
+
+);
+
+
+
+/* CLAVES PRIMARIAS */
+ALTER TABLE Problemas ADD CONSTRAINT PK_problemas PRIMARY KEY (Problema_id);
+ALTER TABLE Sintomas ADD CONSTRAINT PK_sintomas PRIMARY KEY (Sintoma_id);
+ALTER TABLE Protocolos ADD CONSTRAINT PK_protocolos PRIMARY KEY (Protocolo_id);
+ALTER TABLE Pasos ADD CONSTRAINT PK_pasos PRIMARY KEY (Paso_id);
+ALTER TABLE Problemas_Sintomas ADD CONSTRAINT PK_Problemas_Sintomas PRIMARY KEY (Problema_id,Sintoma_id);
+
+
+
+
+/* CLAVES FORÁNEAS */
+ALTER TABLE Problemas_Sintomas ADD
+CONSTRAINT FK_ProblemasSintomas_Problemas FOREIGN KEY (Problema_id)
+REFERENCES Problemas (Problema_id);
+
+ALTER TABLE Problemas_Sintomas ADD
+CONSTRAINT FK_ProblemasSintomas_Sintomas FOREIGN KEY (Sintoma_id)
+REFERENCES Sintomas (Sintoma_id);
+
+ALTER TABLE Protocolos ADD
+CONSTRAINT FK_Protocolos_Problemas FOREIGN KEY (Problema_id)
+REFERENCES Problemas (Problema_id);
+
+ALTER TABLE Pasos ADD
+CONSTRAINT FK_Pasos_Protocolo_Pasos FOREIGN KEY (Protocolo_id)
+REFERENCES Protocolos (Protocolo_id);
+
 
