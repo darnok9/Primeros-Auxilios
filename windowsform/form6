@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PrimerosAuxilios
+{
+    public partial class Form6 : Form
+    {
+   
+        private PictureBox fondo;
+        public Form6()
+
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            //Creo y configuro la imagen(background)
+            fondo = new PictureBox();
+            fondo.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla6.png");
+            fondo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            fondo.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            fondo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            this.Controls.Add(fondo);
+            InitializeComponent();
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
