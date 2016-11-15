@@ -1,1 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace PrimerosAuxilios
+{
+    public partial class Form1 : Form
+    {
+
+        private Button prueba;
+        private Button emergencia;
+        private Button cientodoce;
+        private PictureBox pantalla1;
+
+        public Form1()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;      
+            //Creo el boton emergencia
+            emergencia = new Button();
+            emergencia.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/emergencia.png");
+            emergencia.AutoSize = true;
+            emergencia.Left = 500;
+            emergencia.Top = 100;
+            emergencia.Click += new System.EventHandler(this.OnEmergenciaClick);
+         
+            //Creo el boton prueba
+
+            prueba = new Button();
+            prueba.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/prueba.png");
+            prueba.AutoSize = true;
+            prueba.Left = 500;
+            prueba.Top = 300;
+            prueba.Click += new System.EventHandler(this.OnPruebaClick);
+
+            //Creo el boton cientodoce
+
+            cientodoce = new Button();
+            prueba.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/112.png");
+            cientodoce.Left = 500;
+            cientodoce.Top = 500;
+            cientodoce.Click += new System.EventHandler(this.OnCientodoceClick);
+
+            //Creo y configuro la imagen(background)
+            pantalla1 = new PictureBox();
+            pantalla1.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla1.png");
+            pantalla1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            pantalla1.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            pantalla1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            //add our new controls to the Form
+            this.Controls.Add(prueba);
+            this.Controls.Add(emergencia);
+            this.Controls.Add(pantalla1);
+            this.Controls.Add(cientodoce);
+
+
+            InitializeComponent();
+        }
+
+        
+        
+            //Aqui definiremos los eventos al clicar cada boton/picture
+
+        
+        private void OnEmergenciaClick(object sender, System.EventArgs e)
+        {
+            
+
+            this.Hide();
+            Form2 frm = new PrimerosAuxilios.Form2();
+            frm.Show();
+        }
+
+        private void OnPruebaClick(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            Form2 frm = new PrimerosAuxilios.Form2();
+            frm.Show();
+
+        }
+
+        private void OnCientodoceClick(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            Form2 frm = new PrimerosAuxilios.Form2();
+            frm.Show();
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 
