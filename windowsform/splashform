@@ -1,1 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PrimerosAuxilios
+{
+    public partial class carga : Form
+    {
+
+        private PictureBox pantallacarga;
+        public carga()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+
+            ControlBox = false;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            ShowIcon = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+
+            pantallacarga = new PictureBox();
+            pantallacarga.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla cargainicial.jpg");
+            pantallacarga.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            pantallacarga.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            pantallacarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            pantallacarga.Click += new System.EventHandler(this.OnPantallaClick);
+
+            this.Controls.Add(pantallacarga);
+
+            InitializeComponent();
+        }
+
+        private void OnPantallaClick(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            Form1 frm = new PrimerosAuxilios.Form1();
+            frm.Show();
+        }
+        private void carga_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 
