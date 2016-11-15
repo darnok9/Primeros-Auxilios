@@ -1,0 +1,28 @@
+/* AFEGIR CAMP SEVERIDAD A TAULA PROBLEMES */
+SELECT  problema_id, nombre FROM Problemas
+WHERE consciencia = VAR_CONS
+AND respiracion = VAR_RESP
+ORDER BY severidad;
+
+
+
+
+/* Consulta concreta per edat, si retorna 0 rows, llavors consultar la genérica */
+SELECT protocolo_id, nombre,  descripio FROM Protocolos
+WHERE problema_id = VAR_ID and edad = VAR_EDAD
+
+
+/* Consulta generica sense tenir en compta l'edad */
+SELECT protocolo_id, nombre,  descripio FROM Protocolos
+WHERE problema_id = VAR_ID
+ 
+SELECT  descripio FROM pasos
+WHERE protocolo_id = VAR_ID
+ORDER BY num_paso
+
+
+SELECT nombre FROM sintomas
+INNER JOIN problemas_sintomas
+ON sintomas.sintoma_id = problemas_sintomas.sintoma_id
+WHERE problemas_sintomas.problema_id = VAR_Problema_ID
+
