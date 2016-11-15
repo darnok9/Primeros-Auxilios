@@ -1,1 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PrimerosAuxilios
+{
+    public partial class Form3 : Form
+    {
+        private Button si;
+        private Button no;
+        private Button nolose;
+        private PictureBox fondo;
+        public Form3()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            //Creo el boton emergencia
+            si = new Button();
+            si.Text = "si";
+            si.AutoSize = true;
+            si.Left = 500;
+            si.Top = 100;
+            si.Click += new System.EventHandler(this.OnsiClick);
+
+            //Creo el boton prueba
+
+            no = new Button();
+            no.Text = "no";
+            no.AutoSize = true;
+            no.Left = 500;
+            no.Top = 300;
+            no.Click += new System.EventHandler(this.OnnoClick);
+
+            //Creo el boton cientodoce
+
+            nolose = new Button();
+            nolose.Text = "no lo se";
+            nolose.Left = 500;
+            nolose.Top = 500;
+            nolose.Click += new System.EventHandler(this.OnnoloseClick);
+
+            //Creo y configuro la imagen(background)
+            fondo = new PictureBox();
+            fondo.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla3.png");
+            fondo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            fondo.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            fondo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            //add our new controls to the Form
+            this.Controls.Add(si);
+            this.Controls.Add(no);
+            this.Controls.Add(nolose);
+            this.Controls.Add(fondo);
+            InitializeComponent();
+        }
+        private void OnsiClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.b = 1;
+            this.Hide();
+            Form4 frm = new PrimerosAuxilios.Form4();
+            frm.Show();
+        }
+        private void OnnoClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.b = 0;
+            this.Hide();
+            Form4 frm = new PrimerosAuxilios.Form4();
+            frm.Show();
+        }
+        private void OnnoloseClick(object sender, System.EventArgs e)
+        {
+
+            this.Hide();
+            Form4 frm = new PrimerosAuxilios.Form4();
+            frm.Show();
+        }
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
 
