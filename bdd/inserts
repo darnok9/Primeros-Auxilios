@@ -1,1 +1,202 @@
+-- INSERT INTO
+
+
+
+
+-- TABLES :  PROBLEMAS(NOMBRE, CONSCIENCIA (BIT),RESPIRACIÓN (b), HEMORRAGIA (B))
+-- PASOS (NUM_ PASO (INT), DESCRIPCIÓN, PROTOCOLO_ID)
+--PROTOCOLOS(NOMBRE, DESCRIPCIO, EDAD, problema_id)
+-- SINTOMAS (NOMBRE,protocolo_id)
+
+
+
+
+-- Tabla problemas
+INSERT INTO PROBLEMAS (nombre) VALUES ('Ataque al corazón');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Atragantamiento');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Derrame cerebral');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Heridas');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Control de sangrado');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Picaduras y mordeduras');
+INSERT INTO PROBLEMAS (nombre) VALUES ('Parto de emergencia');
+
+
+--Tabla protocolos
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('RCP',' Reanimación Cardio-Pulmonar',' adulto', 1);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('RCP',' Reanimación Cardio-Pulmonar',' niño', 1);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('RCP', 'Reanimación Cardio-Pulmonar', 'bebé', 1);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Maniobra de Heimlich', 'Compresión abdominal','adulto', 2);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Maniobra de Heimlich', 'Compresión abdominal', 'niño', 2 );
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Maniobra de Heimlich', 'Compresión abdominal', 'bebé', 2);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Derrame cerebral', 'Interrupción en la sangre que fluye en una parte del cerebro', 'adulto', 3);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Derrame cerebral', 'Interrupción en la sangre que fluye en una parte del celebro', 'niño', 3);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Derrame cerebral', 'Interrupción en la sangre que fluye en una parte del cerebro', 'bebé', 3);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Heridas','Evaluación de la herida; abierta, cerrada o lesión abdominal', 'adulto', 4);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Heridas', 'Evaluación de la herida; abierta, cerrada o lesión abdominal', 'niño', 4);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Heridas', 'Evaluación de la herida; abierta, cerrada o lesión abdominal', 'bebé', 4);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Control de sangrado', 'Tipos: sangrado extremo o torniquete', 'adulto', 5);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Control de sangrado', 'Tipos: sangrado extremo o torniquete', 'niño', 5);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Control de sangrado', 'Tipos: sangrado extremo o torniquete', 'bebé', 5);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Picaduras y mordeduras', 'Valoración picadura o mordedura', 'adulto', 6);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Picaduras y mordeduras', 'Valoración picadura o mordedura', 'niño', 6);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Picaduras y mordeduras', 'Valoración picadura o mordedura', 'bebé', 6);
+INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ('Parto de emergencia', 'Parto de emergencia', 'adulto', 7);
+
+
+--INSERT INTO PROTOCOLOS (nombre, descripio, edad, problema_id) VALUES ();
+
+
+
+
+-- Tabla sintomas
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Dolor en el pecho /n malestar /n presión', 1);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Malestar en: /n pecho /n mandíbula /n cuello /n hombro /n brazo /n mentón /n estómago o espalda', 1);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Problemas para respirar', 1);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Pálidez /n sudoración /n nauseas /n mareos /n fátiga', 1);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Tos', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Sujeción de la garganta', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Incapacidad para tose /n hablar /n llorar /n respirar', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Hacer ruidos agudos mientras inhala', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Pánico', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Color azulado de la piel', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Pérdida del conocimiento', 2);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Debilidad o parálisis de un lado del rostro', 3);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Debilidad o adormecimiento en un brazo', 3);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Dificultad al hablar o arrastra las palabras', 3);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Dolor fuerte', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Moretones', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Náuseas', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Vómitos', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Dolor o sensibilidad o una sensación de opresión en el abdomen', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Órganos que sobresalen del abdomen', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Músculos abdominales rígidos', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Otras señales de estado de shock', 4);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Sangrado', 4);
+-- El 5 (control de sangrado) no tiene sintomas.
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Dolor', 6);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Presencia de un aguijón', 6);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Hinchazón', 6);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Signos de una reacción alérgica', 6);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Contracciones regulares', 7);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Necesidad de evacuar', 7);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Fuerte necesidad de empujar', 7);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Abertura vaginal protuberante', 7);
+INSERT INTO SINTOMAS (nombre, protocolo_id) VALUES ('Pujos y esfuerzos por parte de la madre', 7);
+
+
+-- Tabla intermedia Problema-sintoma
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(1,1);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(1,2);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(1,3);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(1,4);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,5);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,6);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,7);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,8);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,9);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,10);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(2,11);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(3,12),(3,13),(3,14);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES (4,15),(4,16),(4,17),(4,18),(4,19),(4,20),(4,21),(4,22),(4,23);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(6,24),(6,25),(6,27),(6,28);
+INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES(7,29),(7,30),(7,31),(7,32),(7,33);
+
+
+
+
+--INSERT INTO Problemas_Sintomas(problema_id, sintoma_id) VALUES();
+
+
+-- Tabla pasos
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '30 compresiones en el pecho', 'empuje fuerte y rápido por el pecho al menos a 2 pulgadas de profundidad y a una velocidad de 100 compresiones por minuto', 1);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '2 soplos de respiración de salvamento', 'incline la cabeza hacia atrás y levante el mentón. Apriete la nariz y forme un sello completo sobre la boca. Sople dentro de la boca durante aproximadamente 1 segundo para hacer que el pecho se levante visiblemente. Dos soplos de salvamento uno después del otro. Si el pecho no se levanta con el primer soplo de respiración vuelva a inclinar la cabeza y proporcione otro soplo de respiración', 1);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'No pare',' continúe con los ciclos de RCP no pare a menos que ocurra una de las siguientes situaciones: nota una señal evidente de vida como la respiración. Hay un DEA listo para usar. Lo releva otro socorrista capacitado o el personal médico. El lugar se vuelve peligroso', 1);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '30 compresiones en el pecho', 'empuje fuerte y rápido por el pecho al menos a 2 pulgadas de profundidad y a una velocidad de 100 compresiones por minuto', 2);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '2 soplos de respiración de salvamento', 'incline la cabeza hacia atrás y levanté el mentón. Apriete la nariz y forme un sello completo sobre la boca. Sople dentro de la boca durante aproximadamente 1 segundo para hacer que el pecho se levante visiblemente. Dos soplos de salvamento uno después del otro. Si el pecho no se levanta con el primer soplo de respiración vuelva a inclinar la cabeza y dele otro soplo de respiración', 2);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'no pare', 'continúe con los ciclos de RCP no pare a menos que ocurra una de las siguientes situaciones: nota una señal evidente de vida como la respiración. Hay un DEA listo para usar. Lo releva otro socorrista capacitado o el personal médico. El lugar se vuelve peligroso', 2);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '30 compresiones en el pecho', 'empuje fuerte y rápido por el pecho al menos a 1 1/2 pulgadas de profundidad y a una velocidad de 100 compresiones por minuto. La posición de las manos: 2 o 3 dedos en el centro del pecho', 3);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '2 soplos de respiración de salvamento',' incline la cabeza hacia atrás y levante el mentón. Apriete la nariz y forme un sello completo sobre la boca. Sople dentro de la boca durante aproximadamente 1 segundo para hacer que el pecho se levante visiblemente. Dos soplos de salvamento uno después del otro. Si el pecho no se levanta con el primer soplo de respiración vuelva a inclinar la cabeza y dele otro soplo de respiración', 3);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'no pare', 'continúe con los ciclos de RCP no pare a menos que ocurra una de las siguientes situaciones: nota una señal evidente de vida como la respiración. Hay un DEA listo para usar. Lo releva otro socorrista capacitado o el personal médico. El lugar se vuelve peligroso', 3);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '5 golpes en la espalda', 'inclina a la persona hacia delante a la altura de la cintura y dele 5 golpes en la espalda entre los omoplatos con la parte inferior de la mano', 4);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '5 presiones abdominales', 'coloque el puño con el pulgar hacia adentro del abdomen de la persona justo sobre el ombligo. Cubra su puño con la otra mano. Cinco presiones abdominales rápidas hacia arriba', 4);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'continúe con la atención', 'continúe con repeticiones de 5 golpes en la espalda y 5 presiones abdominales hasta que: el objeto sea expulsado. La persona pueda toser con fuerza o respirar. La persona pierde el conocimiento',4);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '5 golpes en la espalda', 'inclina a la persona hacia delante a la altura de la cintura y dele 5 golpes en la espalda entre los omoplatos con la parte inferior de la mano', 5);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '5 presiones abdominales', 'coloque el puño con el pulgar hacia el centro del abdomen de la persona justo sobre el ombligo. Cubra su puño con la otra mano. Cinco presiones abdominales rápidas hacia arriba', 5);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'continúe con la atención', 'continúe con repeticiones de 5 golpes en la espalda y 5 presiones abdominales hasta que: el objeto sea expulsado. El niño pueda toser con fuerza o respirar. El niño pierde el conocimiento', 5);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, '5 golpes en la espalda', 'De golpes firmes en la espalda con la parte inferior de una mano entre los omóplatos del bebé', 6);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, '5 presiones en el pecho', 'Coloque 2 o 3 dedos en el centro del bebé justo debajo de la línea de los pezones y comprima el esternón aproximadamente a 1 1/2 pulgadas', 6);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (3, 'continúe con la atención', 'continúe con repeticiones de 5 golpes en la espalda y 5 presiones en el pecho hasta que: el objeto sea expulsado. El bebe pueda toser enérgicamente llorar o respirar. El bebé pierde el conocimiento', 6);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'Procedimiento', 'Trate de saber cuando comenzaron los síntomas. Si la persona está inconsciente mantener las vías respiratorias abiertas. Si hay vomito poner la persona de lado. Retirar cualquier cosa de la boca y no dar de comer ni de beber', 7);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'Procedimiento', 'Trate de saber cuando comenzaron los síntomas. Si el niño está inconsciente mantener las vías respiratorias abiertas. Si hay vomito poner al niño de lado. Retirar cualquier cosa de la boca y no dar de comer ni de beber', 8);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, ' Procedimiento', 'Trate de saber cuando comenzaron los síntomas. Si el bebé está inconsciente mantener las vías respiratorias abiertas. Si hay vómito poner al bebé de lado. Retirar cualquier cosa de la boca y no dar de comer ni de beber', 9);
+
+
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1,'herida abierta', 'Póngase guantes desechables o use otra barrera. Coloque la persona de espaldas con las rodillas dobladas. No empuje hacia adentro ninguno de los órganos que sobresalen de la herida. Quite la ropa de la herida. Aplique apósitos sin apretar. Cubra los apósitos con una envoltura de plástico', 10);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'herida cerrada', 'El área lesionada inmóvil. Aplique frio en la zona afectada. Coloque la persona de espalda con las rodillas dobladas. Evita que la persona sufra frío o calor excesivo', 10);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'herida abierta', 'Póngase guantes desechables o use otra barrera. Coloque al niño de espaldas con las rodillas dobladas. No empuje hacia adentro ninguno de los órganos que sobresalen de la herida. Quite la ropa de la herida. Aplique apósitos sin apretar. Cubra los apósitos con una envoltura de plástico', 11);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'herida cerrada', 'El área lesionada inmóvil. Aplique frío en la zona afectada. Coloque al niño de espalda con las rodillas dobladas. Evita que el niño sufra frío o calor excesivo', 11);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'herida abierta', 'Póngase guantes desechables o use otra barrera. Coloque al bebé de espaldas con las rodillas dobladas. No empuje hacia adentro ninguno de los órganos que sobresalen de la herida. Quite la ropa de la herida. Aplique apósitos sin apretar. Cubra los apósitos con una envoltura de plástico', 12);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'herida cerrada', 'El área lesionada inmóvil. Aplique frío en la zona afectada. Coloque al bebé de espalda con las rodillas dobladas. Evita que el bebé sufra frío o calor excesivo', 12);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'cómo actuar', 'cubra la herida con un apósito estéril. Aplique presión directa hasta que cese el sangrado. Cubre el apósito enrollandolo con una venda. Si no detiene el sangrado aplique más presión colocando más apositos y vendas. Adopte medidas para minimizar el estado de shock', 13);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'cómo aplicar un torniquete', 'coloque el torniquete alrededor de la extremidad a unos 5cm de la herida pero no sobre una articulación. Pase la correa por la hebilla tire de la correa firmemente y asegurarla en su lugar. Doble la varilla y registre el tiempo', 13);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'cómo actuar', 'cubra la herida con un apósito estéril. Aplique presión directa hasta que cese el sangrado. Cubre el apósito enrollandolo con una venda. Si no detiene el sangrado aplique más presión colocando más apositos y vendas. Adopte medidas para minimizar el estado de shock', 14);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'cómo aplicar un torniquete', 'coloque el torniquete alrededor de la extremidad a unos 5cm de la herida pero no sobre una articulación. Pase la correa por la hebilla tire de la correa firmemente y asegurarla en su lugar. Doble la varilla y registre el tiempo', 14);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1, 'cómo actuar', 'cubra la herida con un apósito estéril. Aplique presión directa hasta que cese el sangrado. Cubre el apósito enrollandolo con una venda. Si no detiene el sangrado aplique más presión colocando más apositos y vendas. Adopte medidas para minimizar el estado de shock', 15);
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (2, 'cómo aplicar un torniquete', 'coloque el torniquete alrededor de la extremidad a unos 5cm de la herida pero no sobre una articulación. Pase la correa por la hebilla tire de la correa firmemente y asegurarla en su lugar. Doble la varilla y registre el tiempo', 15);
+
+
+INSERT INTO PASOS ( num_paso, titulo_descripion, descripio, protocolo_id) VALUES (1,'cómo actuar', 'quitar cualquier aguijón posible. lavar el área afectada con agua y jabón. cubrir el área y mantenerla limpia. aplicar una compresa fría para reducir el dolor y la hinchazón', 16);
+
+
+/* AFEGIR CAMP SEVERIDAD A TAULA PROBLEMES */
+SELECT  problema_id, nombre FROM Problemas
+WHERE consciencia = VAR_CONS
+AND respiracion = VAR_RESP
+ORDER BY severidad;
+
+
+
+
+/* Consulta concreta per edat, si retorna 0 rows, llavors consultar la genérica */
+SELECT protocolo_id, nombre,  descripio FROM Protocolos
+WHERE problema_id = VAR_ID and edad = VAR_EDAD
+
+
+/* Consulta generica sense tenir en compta l'edad */
+SELECT protocolo_id, nombre,  descripio FROM Protocolos
+WHERE problema_id = VAR_ID
+ 
+SELECT  descripio FROM pasos
+WHERE protocolo_id = VAR_ID
+ORDER BY num_paso
+
+
+SELECT nombre FROM sintomas
+INNER JOIN problemas_sintomas
+ON sintomas.sintoma_id = problemas_sintomas.sintoma_id
+WHERE problemas_sintomas.problema_id = VAR_Problema_ID
 
