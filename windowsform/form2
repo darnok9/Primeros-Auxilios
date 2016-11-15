@@ -1,1 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
+namespace PrimerosAuxilios
+{
+    public partial class Form2 : Form
+    {
+        private Button bebe;
+        private Button nino;
+        private Button adulto;
+        private PictureBox fondo;
+        public Form2()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            //Creo el boton emergencia
+            bebe = new Button();
+            bebe.Text = "bebe";
+            bebe.AutoSize = true;
+            bebe.Left = 500;
+            bebe.Top = 100;
+            bebe.Click += new System.EventHandler(this.OnbebeClick);
+
+            //Creo el boton prueba
+
+            nino = new Button();
+            nino.Text = "nino";
+            nino.AutoSize = true;
+            nino.Left = 500;
+            nino.Top = 300;
+            nino.Click += new System.EventHandler(this.OnninoClick);
+
+            //Creo el boton cientodoce
+
+            adulto = new Button();
+            adulto.Text = "adulto";
+            adulto.Left = 500;
+            adulto.Top = 500;
+            adulto.Click += new System.EventHandler(this.OnadultoClick);
+
+            //Creo y configuro la imagen(background)
+            fondo = new PictureBox();
+            fondo.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla2.png");
+            fondo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            fondo.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            fondo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            //add our new controls to the Form
+            this.Controls.Add(nino);
+            this.Controls.Add(adulto);
+            this.Controls.Add(bebe);
+            this.Controls.Add(fondo);
+
+            InitializeComponent();
+        }
+
+        private void OnninoClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.a = 1;
+            this.Hide();
+            Form3 frm = new PrimerosAuxilios.Form3();
+            frm.Show();
+        }
+        private void OnadultoClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.a = 2;
+            this.Hide();
+            Form3 frm = new PrimerosAuxilios.Form3();
+            frm.Show();
+        }
+        private void OnbebeClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.a = 0;
+            this.Hide();
+            Form3 frm = new PrimerosAuxilios.Form3();
+            frm.Show();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
