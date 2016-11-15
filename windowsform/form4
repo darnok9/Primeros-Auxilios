@@ -1,1 +1,114 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PrimerosAuxilios
+{
+    public partial class Form4 : Form
+    {
+
+        private Button si;
+        private Button no;
+       
+        private PictureBox  fondo;
+        public Form4()
+        {
+            FormBorderStyle = FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            //Creo el boton emergencia
+            si = new Button();
+            si.Text = "si";
+            si.AutoSize = true;
+            si.Left = 500;
+            si.Top = 100;
+            si.Click += new System.EventHandler(this.OnsiClick);
+
+            //Creo el boton prueba
+
+            no = new Button();
+            no.Text = "no";
+            no.AutoSize = true;
+            no.Left = 500;
+            no.Top = 300;
+            no.Click += new System.EventHandler(this.OnnoClick);
+
+
+
+            //Creo y configuro la imagen(background)
+            fondo = new PictureBox();
+            fondo.Image = Image.FromFile("C:/Users/Wallack/Documents/Conrad/cursos/curso enfoca't 2016-17/clases/cruz roja/jpg/pantalla4.png");
+            fondo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            fondo.Dock = DockStyle.Fill;//This will make the picture adapt to the full size
+            fondo.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            //add our new controls to the Form
+            this.Controls.Add(si);
+            this.Controls.Add(no);
+            this.Controls.Add(fondo);
+            
+
+            InitializeComponent();
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnsiClick(object sender, System.EventArgs e)
+        {
+
+            singleton ston = singleton.getInstance();
+            ston.c = 1;
+
+            if (ston.b == 1 )
+            {
+                Form6 frm = new Form6();
+                this.Hide();
+
+                frm.Show();
+            }
+            else if (ston.b == 0)
+            {
+                Form5 frm = new Form5();
+                this.Hide();
+
+                frm.Show();
+            }
+            else
+            {
+               
+                this.Hide();
+              
+            }
+        }
+
+        private void OnnoClick(object sender, System.EventArgs e)
+        {
+            singleton ston = singleton.getInstance();
+            ston.c = 0;
+            if (ston.c == 0 && ston.a == 2)
+            {
+                Form5 frm = new Form5();
+                this.Hide();
+
+                frm.Show();
+            }
+            else
+            {
+                Form6 frm = new Form6();
+                this.Hide();
+
+                frm.Show();
+            }
+
+        }
+    }
+}
 
