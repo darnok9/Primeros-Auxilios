@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PrimerosAuxilios
+{
+    class singleton
+    {
+        private static readonly singleton instance = new singleton();
+        public int a;
+        public int b;
+        public int c;
+        
+        private singleton()
+        {
+
+        }
+        public static singleton getInstance()
+        {
+            return instance;
+        }
+        
+        public void service()
+        {
+
+        }
+    }
+}
